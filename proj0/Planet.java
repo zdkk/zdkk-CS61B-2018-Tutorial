@@ -1,6 +1,6 @@
 
 public class Planet {
-    static final double G = 6.67e-11;
+    private static final double G = 6.67e-11;
     public double xxPos, yyPos;
     public double xxVel, yyVel;
     public double mass;
@@ -17,9 +17,6 @@ public class Planet {
 
     public Planet(Planet b) {
         this(b.xxPos, b.yyPos, b.xxVel, b.yyVel, b.mass, b.imgFileName);
-    }
-
-    public Planet() {
     }
 
     public double calcDistance(Planet other) {

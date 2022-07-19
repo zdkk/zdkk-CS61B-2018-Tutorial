@@ -15,13 +15,13 @@ public class NBody {
         double r = in.readDouble();
         Planet[] res = new Planet[n];
         for (int i = 0; i < n; i++) {
-            res[i] = new Planet();
-            res[i].xxPos = in.readDouble();
-            res[i].yyPos = in.readDouble();
-            res[i].xxVel = in.readDouble();
-            res[i].yyVel = in.readDouble();
-            res[i].mass = in.readDouble();
-            res[i].imgFileName = in.readString();
+            double xxPos = in.readDouble();
+            double yyPos = in.readDouble();
+            double xxVel = in.readDouble();
+            double yyVel = in.readDouble();
+            double mass = in.readDouble();
+            String imgFileName = in.readString();
+            res[i] = new Planet(xxPos, yyPos, xxVel, yyVel, mass, imgFileName);
         }
 
         return res;
