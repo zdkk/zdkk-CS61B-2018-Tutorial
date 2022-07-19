@@ -50,12 +50,8 @@ public class NBody {
         for (double t = 0; T - t > 1e-6; t = t + dt) {
             double[][] f = new double[n][2];
             for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (i == j)
-                        continue;
-                    f[i][0] += planets[i].calcForceExertedByX(planets[j]);
-                    f[i][1] += planets[i].calcForceExertedByY(planets[j]);
-                }
+                f[i][0] = planets[i].calcNetForceExertedByX(planets);
+                f[i][1] = planets[i].calcNetForceExertedByY(planets);
             }
             for (int i = 0; i < n; i++) {
                 planets[i].update(dt, f[i][0], f[i][1]);

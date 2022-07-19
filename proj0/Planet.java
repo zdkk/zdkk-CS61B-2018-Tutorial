@@ -62,4 +62,24 @@ public class Planet {
         StdDraw.picture(xxPos, yyPos, "images/" + imgFileName);
     }
 
+    public double calcNetForceExertedByX(Planet[] planets) {
+        double res = 0;
+        for (Planet p : planets) {
+            if (this == p)
+                continue;
+            res += calcForceExertedByX(p);
+        }
+        return res;
+    }
+
+    public double calcNetForceExertedByY(Planet[] planets) {
+        double res = 0;
+        for (Planet p : planets) {
+            if (this == p)
+                continue;
+            res += calcForceExertedByY(p);
+        }
+        return res;
+    }
+
 }
